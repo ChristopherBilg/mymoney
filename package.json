@@ -8,6 +8,10 @@
     "test": "nyc mocha src/**/*.test.js",
     "lint": "eslint src/"
   },
+  "pre-commit": [
+    "test",
+    "lint"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ChristopherBilg/mymoney.git"
@@ -30,6 +34,7 @@
     "eslint-plugin-react": "^7.20.0",
     "eslint-plugin-react-hooks": "^2.5.1",
     "mocha": "^7.2.0",
-    "nyc": "^15.1.0"
+    "nyc": "^15.1.0",
+    "pre-commit": "^1.2.2"
   }
 }
