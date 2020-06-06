@@ -1,0 +1,19 @@
+{
+  "name": "mymoney",
+  "version": "0.0.1",
+  "description": "mymoney - your personal finance dashboard",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChristopherBilg/mymoney.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ChristopherBilg/mymoney/issues"
+  },
+  "homepage": "https://github.com/ChristopherBilg/mymoney#readme"
+}
