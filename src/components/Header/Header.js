@@ -1,14 +1,27 @@
 import React from 'react';
 import {
-  Navbar, Alignment, NavbarHeading, NavbarGroup, Colors, NavbarDivider, Button,
+  Navbar, Alignment, NavbarHeading, NavbarGroup, NavbarDivider, Classes, AnchorButton,
 } from '@blueprintjs/core';
 
 const Header = () => (
-  <Navbar color={Colors.BLUE3} fixedToTop>
+  <Navbar className={Classes.DARK}>
     <NavbarGroup align={Alignment.LEFT}>
-      <NavbarHeading>mymoney</NavbarHeading>
+      <NavbarHeading>Blueprint Sandbox</NavbarHeading>
       <NavbarDivider />
-      <Button intent='success' text='Click me!' />
+      <AnchorButton
+        href='http://blueprintjs.com/docs/v2/'
+        text='Docs'
+        target='_blank'
+        minimal
+        rightIcon='share'
+      />
+      <AnchorButton
+        href='http://github.com/palantir/blueprint'
+        text='Github'
+        target='_blank'
+        minimal
+        rightIcon='code'
+      />
     </NavbarGroup>
   </Navbar>
 );
