@@ -3,3 +3,7 @@ node_modules/
 
 # NYC (linting) output directory
 .nyc_output/
+
+# Storybook UI testing directories
+.storybook/
+storybook-static/
