@@ -22,6 +22,7 @@
         "react"
     ],
     "rules": {
-      "react/jsx-filename-extension": "off"
+      "react/jsx-filename-extension": "off",
+      "jsx-quotes": ["error", "prefer-single"]
     }
 }
