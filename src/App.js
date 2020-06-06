@@ -1,10 +1,15 @@
 import React from 'react';
-import Button from './components/Button/Button';
+import Header from './components/Header/Header';
+import NavPane from './components/NavPane/NavPane';
+import Contents from './components/Contents/Contents';
+import Footer from './components/Footer/Footer';
 
 const App = () => (
   <>
-    <h1>Hello world!</h1>
-    <Button />
+    <Header />
+    <NavPane />
+    <Contents />
+    <Footer />
   </>
 );
 

@@ -10,3 +10,6 @@ storybook-static/
 
 # Webpack distributable (build) directory
 dist/
+
+# IDE directories/files
+.vscode/
