@@ -7,3 +7,6 @@ node_modules/
 # Storybook UI testing directories
 .storybook/
 storybook-static/
+
+# Webpack distributable (build) directory
+dist/
