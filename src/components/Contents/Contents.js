@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Elevation, Button} from '@blueprintjs/core';
+import { Card, Elevation, Button } from '@blueprintjs/core';
 
 import './Contents.css';
 
