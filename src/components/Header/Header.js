@@ -1,20 +1,17 @@
 import React from 'react';
 import {
-  Navbar, Alignment, NavbarHeading, NavbarGroup, AnchorButton, Tooltip,
+  Navbar, Alignment, NavbarGroup, AnchorButton, Tooltip,
 } from '@blueprintjs/core';
 
 import { hoverOpenDelay, className } from '../../global/constants';
+import SidebarMenuButton from '../SidebarMenuButton/SidebarMenuButton';
 
 const Header = () => (
   <Navbar className={className} fixedToTop>
     <NavbarGroup align={Alignment.LEFT}>
-      <Tooltip
-        hoverOpenDelay={hoverOpenDelay}
-        content='mymoney - your personal finance dashboard'
-      >
-        <NavbarHeading>mymoney</NavbarHeading>
-      </Tooltip>
+      <SidebarMenuButton />
     </NavbarGroup>
+
     <NavbarGroup align={Alignment.RIGHT}>
       <Tooltip
         hoverOpenDelay={hoverOpenDelay}
