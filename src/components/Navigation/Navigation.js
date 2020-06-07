@@ -1,10 +1,11 @@
 import React from 'react';
 import {
-  Navbar, Alignment, NavbarGroup, AnchorButton, Tooltip,
+  Navbar, Alignment, NavbarGroup,
 } from '@blueprintjs/core';
 
-import { hoverOpenDelay, className } from '../../global/constants';
+import { className } from '../../global/constants';
 import SidebarMenuButton from '../SidebarMenuButton/SidebarMenuButton';
+import HomeButton from '../HomeButton/HomeButton';
 
 const Navigation = () => (
   <Navbar className={className} fixedToTop>
@@ -13,17 +14,7 @@ const Navigation = () => (
     </NavbarGroup>
 
     <NavbarGroup align={Alignment.RIGHT}>
-      <Tooltip
-        hoverOpenDelay={hoverOpenDelay}
-        content='Go to the home page.'
-      >
-        <AnchorButton
-          href='#'
-          text='Home'
-          minimal
-          rightIcon='home'
-        />
-      </Tooltip>
+      <HomeButton />
     </NavbarGroup>
   </Navbar>
 );

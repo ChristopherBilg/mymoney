@@ -1,11 +1,18 @@
 import React from 'react';
-import { Button } from '@blueprintjs/core';
+import { Button, Tooltip } from '@blueprintjs/core';
+
+import { hoverOpenDelay } from '../../global/constants';
 
 const SidebarMenuButton = () => (
-  <Button
-    minimal
-    icon='menu'
-  />
+  <Tooltip
+    hoverOpenDelay={hoverOpenDelay}
+    content='Open the sidebar menu.'
+  >
+    <Button
+      minimal
+      icon='menu'
+    />
+  </Tooltip>
 );
 
 export default SidebarMenuButton;
