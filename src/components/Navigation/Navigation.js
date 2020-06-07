@@ -6,7 +6,7 @@ import {
 import { hoverOpenDelay, className } from '../../global/constants';
 import SidebarMenuButton from '../SidebarMenuButton/SidebarMenuButton';
 
-const Header = () => (
+const Navigation = () => (
   <Navbar className={className} fixedToTop>
     <NavbarGroup align={Alignment.LEFT}>
       <SidebarMenuButton />
@@ -28,4 +28,4 @@ const Header = () => (
   </Navbar>
 );
 
-export default Header;
+export default Navigation;
