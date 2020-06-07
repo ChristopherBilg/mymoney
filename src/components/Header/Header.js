@@ -1,27 +1,32 @@
 import React from 'react';
 import {
-  Navbar, Alignment, NavbarHeading, NavbarGroup, NavbarDivider, Classes, AnchorButton,
+  Navbar, Alignment, NavbarHeading, NavbarGroup, AnchorButton, Tooltip,
 } from '@blueprintjs/core';
 
+import { hoverOpenDelay, className } from '../../global/constants';
+
 const Header = () => (
-  <Navbar className={Classes.DARK}>
+  <Navbar className={className} fixedToTop>
     <NavbarGroup align={Alignment.LEFT}>
-      <NavbarHeading>Blueprint Sandbox</NavbarHeading>
-      <NavbarDivider />
-      <AnchorButton
-        href='http://blueprintjs.com/docs/v2/'
-        text='Docs'
-        target='_blank'
-        minimal
-        rightIcon='share'
-      />
-      <AnchorButton
-        href='http://github.com/palantir/blueprint'
-        text='Github'
-        target='_blank'
-        minimal
-        rightIcon='code'
-      />
+      <Tooltip
+        hoverOpenDelay={hoverOpenDelay}
+        content='mymoney - your personal finance dashboard'
+      >
+        <NavbarHeading>mymoney</NavbarHeading>
+      </Tooltip>
+    </NavbarGroup>
+    <NavbarGroup align={Alignment.RIGHT}>
+      <Tooltip
+        hoverOpenDelay={hoverOpenDelay}
+        content='Go to the home page.'
+      >
+        <AnchorButton
+          href='#'
+          text='Home'
+          minimal
+          rightIcon='home'
+        />
+      </Tooltip>
     </NavbarGroup>
   </Navbar>
 );
