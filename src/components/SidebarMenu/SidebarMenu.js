@@ -4,11 +4,16 @@ import {
   Drawer, Position, Menu, MenuItem, MenuDivider,
 } from '@blueprintjs/core';
 
-const SidebarMenu = ({ isOpen }) => (
+const SidebarMenu = ({ isOpen, onClose }) => (
   <Drawer
     isOpen={isOpen}
+    onClose={onClose}
     position={Position.LEFT}
     size={Drawer.SIZE_SMALL}
+    autoFocus
+    enforceFocus
+    canOutsideClickClose
+    canEscapeKeyClose
     title='mymoney'
     icon='menu-open'
   >
@@ -34,6 +39,7 @@ const SidebarMenu = ({ isOpen }) => (
 
 SidebarMenu.propTypes = {
   isOpen: PropType.bool,
+  onClose: PropType.func.isRequired,
 };
 
 SidebarMenu.defaultProps = {

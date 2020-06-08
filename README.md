@@ -23,7 +23,7 @@ mymoney - your personal finance dashboard
 
 ### TODO (for developers)
 
-1. Toggle open/close sidebar with menu inside of it. (will be position absolute, z-index above content, and margin-top: 50px)
+1. ~~Toggle open/close sidebar with menu inside of it. (will be position absolute, z-index above content, and margin-top: 50px)~~
 2. Begin work on backend database. Easy of use above all. (more than likely SQL for data-manipulation abilities)
   - **Note: The database needs to be configurable for server/port/login/password/etc. and needs to have an offline options integrated into this repo.**
 3. [draw.io](https://www.draw.io): template out a UI for _incredibly basic_ budgeting.
