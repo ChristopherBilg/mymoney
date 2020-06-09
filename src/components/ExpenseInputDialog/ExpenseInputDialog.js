@@ -6,11 +6,7 @@ const ExpenseInputDialog = ({ isOpen, onClose }) => {
   const [amount, setAmount] = useState();
   const handleAmountChange = (valueN) => {
     const result = valueN.toFixed(2);
-    if (Number.isNaN(result) || typeof result !== 'number') {
-      setAmount(0);
-    } else {
-      setAmount(result);
-    }
+    setAmount(result);
   };
 
   const [comment, setComment] = useState();
