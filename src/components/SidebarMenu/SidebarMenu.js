@@ -1,7 +1,11 @@
 import React from 'react';
 import PropType from 'prop-types';
 import {
-  Drawer, Position, Menu, MenuItem, MenuDivider,
+  Drawer,
+  Position,
+  Menu,
+  MenuItem,
+  MenuDivider,
 } from '@blueprintjs/core';
 
 const SidebarMenu = ({ isOpen, onClose }) => (

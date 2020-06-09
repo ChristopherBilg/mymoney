@@ -11,15 +11,8 @@ const SidebarMenuButton = () => {
 
   return (
     <>
-      <Tooltip
-        hoverOpenDelay={hoverOpenDelay}
-        content='Open the sidebar menu.'
-      >
-        <Button
-          minimal
-          icon='menu'
-          onClick={handleOpen}
-        />
+      <Tooltip hoverOpenDelay={hoverOpenDelay} content='Open the sidebar menu.'>
+        <Button minimal icon='menu' onClick={handleOpen} />
       </Tooltip>
       <SidebarMenu isOpen={showSidebarMenu} onClose={handleClose} />
     </>

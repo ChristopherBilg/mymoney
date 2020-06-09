@@ -5,10 +5,7 @@ import PropType from 'prop-types';
 import { hoverOpenDelay } from '../../global/constants';
 
 const HomeButton = ({ isText }) => (
-  <Tooltip
-    hoverOpenDelay={hoverOpenDelay}
-    content='Go to the home page.'
-  >
+  <Tooltip hoverOpenDelay={hoverOpenDelay} content='Go to the home page.'>
     <AnchorButton
       href='#'
       text={isText ? 'Home' : null}

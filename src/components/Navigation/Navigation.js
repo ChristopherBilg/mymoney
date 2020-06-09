@@ -1,7 +1,5 @@
 import React from 'react';
-import {
-  Navbar, Alignment, NavbarGroup,
-} from '@blueprintjs/core';
+import { Navbar, Alignment, NavbarGroup } from '@blueprintjs/core';
 
 import { className } from '../../global/constants';
 import SidebarMenuButton from '../SidebarMenuButton/SidebarMenuButton';
