@@ -1,5 +1,10 @@
 import React from 'react';
-import { Navbar, Alignment, NavbarGroup } from '@blueprintjs/core';
+import {
+  Navbar,
+  Alignment,
+  NavbarGroup,
+  NavbarHeading,
+} from '@blueprintjs/core';
 
 import { className } from '../../global/constants';
 import SidebarMenuButton from '../SidebarMenuButton/SidebarMenuButton';
@@ -9,6 +14,7 @@ const Navigation = () => (
   <Navbar className={className} fixedToTop>
     <NavbarGroup align={Alignment.LEFT}>
       <SidebarMenuButton />
+      <NavbarHeading>mymoney</NavbarHeading>
     </NavbarGroup>
 
     <NavbarGroup align={Alignment.RIGHT}>
