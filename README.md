@@ -32,7 +32,7 @@ mymoney - your personal finance dashboard
 
 ### TODO (for developers)
 
-- Begin work on backend api / database. (`node-persist`?)
+- Work on backend api / database. (`node-persist`)
 - [draw.io](https://www.draw.io): template out a UI for _incredibly basic_ budgeting.
   - An input form with type of transaction (expense, investment, paycheck, etc.), an amount input, a 'comments' input, and a submit button.
   - A section that will list all previous transactions.

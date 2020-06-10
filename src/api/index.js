@@ -2,7 +2,7 @@
 const express = require('express');
 
 const app = express();
-require('./database')(app);
+require('./database/database')(app);
 
 const hostname = 'localhost';
 const port = 3000;
