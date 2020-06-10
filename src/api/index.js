@@ -1,11 +1,14 @@
 /* eslint-disable no-console */
 const express = require('express');
+const database = require('./database/database');
 
 const app = express();
-require('./database/database')(app);
+app.use('/database', database);
 
 const hostname = 'localhost';
 const port = 3000;
-app.listen(port, hostname, () => {
+app.listen(port, hostname, (error) => {
+  if (error) throw new Error(error);
+
   console.log(`'mymoney' REST API listening on http://${hostname}:${port}`);
 });
