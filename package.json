@@ -6,6 +6,7 @@
   "main": "src/index.js",
   "scripts": {
     "start": "webpack-dev-server --open --mode development",
+    "api": "nodemon --watch src/api/ src/api/index.js",
     "build": "webpack --mode production",
     "serve": "http-server -a localhost -p 8080 dist/",
     "test": "nyc mocha src/**/*.test.js -r esm",
@@ -33,6 +34,7 @@
   "homepage": "https://github.com/ChristopherBilg/mymoney#readme",
   "dependencies": {
     "@blueprintjs/core": "^3.28.1",
+    "express": "^4.17.1",
     "normalize.css": "^8.0.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
@@ -59,6 +61,7 @@
     "html-webpack-plugin": "^4.3.0",
     "http-server": "^0.12.3",
     "mocha": "^7.2.0",
+    "nodemon": "^2.0.4",
     "nyc": "^15.1.0",
     "pre-commit": "^1.2.2",
     "prettier": "2.0.5",
