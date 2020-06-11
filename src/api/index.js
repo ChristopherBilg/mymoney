@@ -1,8 +1,12 @@
 /* eslint-disable no-console */
 const express = require('express');
+const cors = require('cors');
 const database = require('./database/database');
 
 const app = express();
+app.use(cors());
+app.use(express.json());
+
 app.use('/database', database);
 
 const hostname = 'localhost';

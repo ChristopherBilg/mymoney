@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropType from 'prop-types';
 import { Dialog, Button, NumericInput, InputGroup } from '@blueprintjs/core';
+import axios from 'axios';
 
 const ExpenseInputDialog = ({ isOpen, onClose }) => {
   const [amount, setAmount] = useState();
@@ -13,6 +14,11 @@ const ExpenseInputDialog = ({ isOpen, onClose }) => {
   const handleCommentChange = (event) => {
     const commentString = event.target.value;
     setComment(commentString.substring(0, 30));
+  };
+
+  const handleSubmit = () => {
+    axios.post('http://localhost:3000/database/expense', { amount, comment });
+    onClose();
   };
 
   return (
@@ -42,7 +48,7 @@ const ExpenseInputDialog = ({ isOpen, onClose }) => {
         value={comment}
         onChange={handleCommentChange}
       />
-      <Button>Submit</Button>
+      <Button onClick={handleSubmit}>Submit</Button>
     </Dialog>
   );
 };

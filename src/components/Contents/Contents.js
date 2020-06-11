@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { Card, Elevation, Button } from '@blueprintjs/core';
+import { Card, Button } from '@blueprintjs/core';
 
 import './Contents.css';
 import IncomeInputDialog from '../IncomeInputDialog/IncomeInputDialog';
 import ExpenseInputDialog from '../ExpenseInputDialog/ExpenseInputDialog';
+import IncomeDisplayCard from '../IncomeDisplayCard/IncomeDisplayCard';
+import ExpenseDisplayCard from '../ExpenseDisplayCard/ExpenseDisplayCard';
 
 const Contents = () => {
   const [showIncomeInputDialog, setShowIncomeInputDialog] = useState(false);
@@ -17,12 +19,15 @@ const Contents = () => {
   return (
     <>
       <div id='contents' />
-      <Card elevation={Elevation.THREE}>
-        <h1>Welcome to mymoney!</h1>
-        <p>mymoney - your personal finance dashboard</p>
+      <Card>
+        <h1>Welcome to mymoney - your personal finance dashboard!</h1>
         <Button onClick={handleIncomeDialogOpen}>Add Income</Button>
         <Button onClick={handleExpenseDialogOpen}>Add Expense</Button>
       </Card>
+
+      <IncomeDisplayCard />
+      <ExpenseDisplayCard />
+
       <IncomeInputDialog
         isOpen={showIncomeInputDialog}
         onClose={handleIncomeDialogClose}

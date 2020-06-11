@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 const express = require('express');
 const storage = require('node-persist');
+const { v4: uuidv4 } = require('uuid');
 
 const incomeDatabaseKey = 'income';
 const expenseDatabaseKey = 'expense';
@@ -20,8 +21,7 @@ router
     storage
       .getItem(incomeDatabaseKey)
       .then((data) => {
-        response.send(data);
-        console.log(request.ip, ': requested income =', data);
+        response.send(data || []);
       })
       .catch((error) => {
         response.send(error);
@@ -31,15 +31,16 @@ router
     storage
       .getItem(incomeDatabaseKey)
       .then((data) => {
-        const newIncomeEntry = {
+        const entry = {
+          id: uuidv4(),
           amount: request.body.amount,
           comment: request.body.comment,
         };
-        storage.updateItem(incomeDatabaseKey, [...data, newIncomeEntry]);
+        if (data) return storage.setItem(incomeDatabaseKey, [...data, entry]);
+        return storage.setItem(incomeDatabaseKey, [entry]);
       })
-      .catch((error) => {
-        response.send(error);
-      });
+      .then(() => response.send('Success'))
+      .catch((error) => response.send(error));
   });
 
 // Expense router
@@ -49,8 +50,7 @@ router
     storage
       .getItem(expenseDatabaseKey)
       .then((data) => {
-        response.send(data);
-        console.log(request.ip, ': requested expense =', data);
+        response.send(data || []);
       })
       .catch((error) => {
         response.send(error);
@@ -60,15 +60,16 @@ router
     storage
       .getItem(expenseDatabaseKey)
       .then((data) => {
-        const newExpenseEntry = {
+        const entry = {
+          id: uuidv4(),
           amount: request.body.amount,
           comment: request.body.comment,
         };
-        storage.updateItem(expenseDatabaseKey, [...data, newExpenseEntry]);
+        if (data) return storage.setItem(expenseDatabaseKey, [...data, entry]);
+        return storage.setItem(expenseDatabaseKey, [entry]);
       })
-      .catch((error) => {
-        response.send(error);
-      });
+      .then(() => response.send('Success'))
+      .catch((error) => response.send(error));
   });
 
 module.exports = router;
