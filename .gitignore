@@ -13,3 +13,6 @@ dist/
 
 # IDE directories/files
 .vscode/
+
+# Storage (node-persist module)
+.node-persist/
