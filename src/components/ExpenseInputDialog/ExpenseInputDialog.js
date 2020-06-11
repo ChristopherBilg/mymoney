@@ -3,6 +3,8 @@ import PropType from 'prop-types';
 import { Dialog, Button, NumericInput, InputGroup } from '@blueprintjs/core';
 import axios from 'axios';
 
+import { HOSTNAME_AND_PORT, API_ENDPOINTS } from '../../global/constants';
+
 const ExpenseInputDialog = ({ isOpen, onClose }) => {
   const [amount, setAmount] = useState();
   const handleAmountChange = (valueN) => {
@@ -17,7 +19,10 @@ const ExpenseInputDialog = ({ isOpen, onClose }) => {
   };
 
   const handleSubmit = () => {
-    axios.post('http://localhost:3000/database/expense', { amount, comment });
+    axios.post(`${HOSTNAME_AND_PORT}${API_ENDPOINTS.DATABASE_INCOME}`, {
+      amount,
+      comment,
+    });
     onClose();
   };
 
