@@ -27,6 +27,8 @@ mymoney - your personal finance dashboard
 ### TODO (for developers)
 
 - Add storybooks for all components that don't have one.
+- Add linting for valid JSDoc in source code
+- Add building of valid JSDoc from source code into readable format `(markdown?)`
 - Merge income and expense dialogs into one component
 - Merge income and expense display cards into one component
 - Implement [json schema validation](https://www.npmjs.com/package/ajv) for database inputs

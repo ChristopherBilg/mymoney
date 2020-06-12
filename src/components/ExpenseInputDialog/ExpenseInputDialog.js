@@ -3,8 +3,8 @@ import PropType from 'prop-types';
 import { Dialog, Button, NumericInput, InputGroup } from '@blueprintjs/core';
 import axios from 'axios';
 
-import { HOSTNAME_AND_PORT, API_ENDPOINTS } from '../../global/constants';
 import { DateInput } from '@blueprintjs/datetime';
+import { HOSTNAME_AND_PORT, API_ENDPOINTS } from '../../global/constants';
 
 const ExpenseInputDialog = ({ isOpen, onClose }) => {
   // Amount
