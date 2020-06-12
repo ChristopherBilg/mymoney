@@ -35,7 +35,9 @@ router
           id: uuidv4(),
           amount: request.body.amount,
           comment: request.body.comment,
+          datetime: request.body.datetime,
         };
+
         if (data) return storage.setItem(incomeDatabaseKey, [...data, entry]);
         return storage.setItem(incomeDatabaseKey, [entry]);
       })
@@ -64,7 +66,9 @@ router
           id: uuidv4(),
           amount: request.body.amount,
           comment: request.body.comment,
+          datetime: request.body.datetime,
         };
+
         if (data) return storage.setItem(expenseDatabaseKey, [...data, entry]);
         return storage.setItem(expenseDatabaseKey, [entry]);
       })

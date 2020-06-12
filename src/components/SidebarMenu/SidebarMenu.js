@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropType from 'prop-types';
 import {
   Drawer,
@@ -7,39 +7,48 @@ import {
   MenuItem,
   MenuDivider,
 } from '@blueprintjs/core';
+import IncomeInputDialog from '../IncomeInputDialog/IncomeInputDialog';
+import ExpenseInputDialog from '../ExpenseInputDialog/ExpenseInputDialog';
 
-const SidebarMenu = ({ isOpen, onClose }) => (
-  <Drawer
-    isOpen={isOpen}
-    onClose={onClose}
-    position={Position.LEFT}
-    size={Drawer.SIZE_SMALL}
-    autoFocus
-    enforceFocus
-    canOutsideClickClose
-    canEscapeKeyClose
-    title='mymoney'
-    icon='menu-open'
-  >
-    <Menu>
-      <MenuDivider title='Menu 1' />
-      <MenuItem text='MenuItem 1.1' />
-      <MenuItem text='MenuItem 1.2' />
+const SidebarMenu = ({ isOpen, onClose }) => {
+  const [showIncomeInputDialog, setShowIncomeInputDialog] = useState(false);
+  const handleIncomeDialogOpen = () => setShowIncomeInputDialog(true);
+  const handleIncomeDialogClose = () => setShowIncomeInputDialog(false);
 
-      <MenuDivider title='Menu 2' />
-      <MenuItem text='MenuItem 2.1' />
-      <MenuItem text='MenuIteM 2.2' />
+  const [showExpenseInputDialog, setShowExpenseInputDialog] = useState(false);
+  const handleExpenseDialogOpen = () => setShowExpenseInputDialog(true);
+  const handleExpenseialogClose = () => setShowExpenseInputDialog(false);
 
-      <MenuDivider title='Menu 3' />
-      <MenuItem text='MenuItem 3.1' />
-      <MenuItem text='MenuItem 3.2' />
+  return (
+    <Drawer
+      isOpen={isOpen}
+      onClose={onClose}
+      position={Position.LEFT}
+      size={Drawer.SIZE_SMALL}
+      autoFocus
+      enforceFocus
+      canOutsideClickClose
+      canEscapeKeyClose
+      title='mymoney'
+      icon='menu-open'
+    >
+      <Menu>
+        <MenuDivider title='Income & Expenses' />
+        <MenuItem text='Add Income' onClick={handleIncomeDialogOpen} />
+        <MenuItem text='Add Expense' onClick={handleExpenseDialogOpen} />
+      </Menu>
 
-      <MenuDivider title='Menu 4' />
-      <MenuItem text='MenuItem 4.1' />
-      <MenuItem text='MenuItem 4.2' />
-    </Menu>
-  </Drawer>
-);
+      <IncomeInputDialog
+        isOpen={showIncomeInputDialog}
+        onClose={handleIncomeDialogClose}
+      />
+      <ExpenseInputDialog
+        isOpen={showExpenseInputDialog}
+        onClose={handleExpenseialogClose}
+      />
+    </Drawer>
+  );
+};
 
 SidebarMenu.propTypes = {
   isOpen: PropType.bool,

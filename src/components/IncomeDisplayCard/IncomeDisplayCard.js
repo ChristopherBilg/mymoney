@@ -15,7 +15,7 @@ const IncomeDisplayCard = () => {
 
   useEffect(() => {
     getAndSetIncomeData();
-    const interval = setInterval(() => getAndSetIncomeData(), 1000);
+    const interval = setInterval(() => getAndSetIncomeData(), 60 * 1000);
 
     return () => clearInterval(interval);
   }, []);
@@ -25,7 +25,7 @@ const IncomeDisplayCard = () => {
       <h1>Income</h1>
       {allIncome.list.map((singleIncome) => (
         <div key={singleIncome.id}>
-          [{singleIncome.id}] ${singleIncome.amount}: {singleIncome.comment}
+          [{singleIncome.datetime}] ${singleIncome.amount}: {singleIncome.comment}
         </div>
       ))}
     </Card>

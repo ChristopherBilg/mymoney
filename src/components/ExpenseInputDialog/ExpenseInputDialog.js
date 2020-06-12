@@ -15,7 +15,7 @@ const ExpenseInputDialog = ({ isOpen, onClose }) => {
   const [comment, setComment] = useState();
   const handleCommentChange = (event) => {
     const commentString = event.target.value;
-    setComment(commentString.substring(0, 30));
+    setComment(commentString.substring(0, 50));
   };
 
   const handleSubmit = () => {
@@ -37,13 +37,11 @@ const ExpenseInputDialog = ({ isOpen, onClose }) => {
         fill
         large
         leftIcon='dollar'
-        majorStepSize={100}
-        minorStepSize={0.1}
-        min={0.01}
-        max={1000000}
         placeholder='Amount...'
         value={amount}
         onValueChange={handleAmountChange}
+        majorStepSize={100}
+        minorStepSize={0.1}
       />
       <InputGroup
         fill

@@ -19,8 +19,7 @@
   },
   "pre-commit": [
     "test",
-    "lint",
-    "prettier-check"
+    "lint"
   ],
   "repository": {
     "type": "git",
@@ -34,6 +33,7 @@
   "homepage": "https://github.com/ChristopherBilg/mymoney#readme",
   "dependencies": {
     "@blueprintjs/core": "^3.28.1",
+    "@blueprintjs/datetime": "^3.18.2",
     "axios": "^0.19.2",
     "cors": "^2.8.5",
     "express": "^4.17.1",

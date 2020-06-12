@@ -15,7 +15,7 @@ const ExpenseDisplayCard = () => {
 
   useEffect(() => {
     getAndSetExpenseData();
-    const interval = setInterval(() => getAndSetExpenseData(), 1000);
+    const interval = setInterval(() => getAndSetExpenseData(), 60 * 1000);
 
     return () => clearInterval(interval);
   }, []);

@@ -8,6 +8,6 @@ export const API_ROUTERS = {
   DATABASE: '/database',
 };
 export const API_ENDPOINTS = {
-  DATABASE_INCOME: `${API_ROUTERS}/income`,
-  DATABASE_EXPENSE: `${API_ROUTERS}/expense`,
+  DATABASE_INCOME: `${API_ROUTERS.DATABASE}/income`,
+  DATABASE_EXPENSE: `${API_ROUTERS.DATABASE}/expense`,
 };

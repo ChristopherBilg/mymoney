@@ -22,18 +22,14 @@ mymoney - your personal finance dashboard
 - npm: v6.14.5
 - node: v12.16.1
 
-- Architecture (~~M~~ERN)
-  - ~~MongoDB~~
-  - Express
+- Main Architecture
   - React
-  - Node
+  - Express
+  - Node-persist
 
 # Thank you so much and please enjoy!
 
 ### TODO (for developers)
 
-- [draw.io](https://www.draw.io): template out a UI for _incredibly basic_ budgeting.
-  - An input form with type of transaction (expense, investment, paycheck, etc.), an amount input, a 'comments' input, and a submit button.
-  - A section that will list all previous transactions.
-  - A section that will calculate some statistics.
-- Figure out CORS problem with express not accept axios requests
+- Add expense date picker like I did with income (this will affect `ExpenseInputDialog.js` & `ExpenseDisplayCard.js`)
+- Add storybooks for all components that don't have one.
