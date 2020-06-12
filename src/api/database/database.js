@@ -45,6 +45,24 @@ router
       .catch((error) => response.send(error));
   });
 
+router
+  .route(`${incomeRoute}/:id`)
+  .delete((request, response) => {
+    const { id } = request.params;
+    storage
+      .getItem(incomeDatabaseKey)
+      .then((data) => {
+        if (!data) return null;
+
+        const list = data.filter((entry) => entry.id !== id);
+        if (!list) return null;
+
+        return storage.setItem(incomeDatabaseKey, list);
+      })
+      .then(() => response.send('Success'))
+      .catch((error) => response.send(error));
+  });
+
 // Expense router
 router
   .route(expenseRoute)
@@ -71,6 +89,24 @@ router
 
         if (data) return storage.setItem(expenseDatabaseKey, [...data, entry]);
         return storage.setItem(expenseDatabaseKey, [entry]);
+      })
+      .then(() => response.send('Success'))
+      .catch((error) => response.send(error));
+  });
+
+router
+  .route(`${expenseRoute}/:id`)
+  .delete((request, response) => {
+    const { id } = request.params;
+    storage
+      .getItem(expenseDatabaseKey)
+      .then((data) => {
+        if (!data) return null;
+
+        const list = data.filter((entry) => entry.id !== id);
+        if (!list) return null;
+
+        return storage.setItem(expenseDatabaseKey, list);
       })
       .then(() => response.send('Success'))
       .catch((error) => response.send(error));

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Card } from '@blueprintjs/core';
+import { Card, Button } from '@blueprintjs/core';
 import axios from 'axios';
 
 import './ExpenseDisplayCard.css';
@@ -13,6 +13,12 @@ const ExpenseDisplayCard = () => {
       .then((data) => setAllExpense({ list: data.data }));
   };
 
+  const handleClick = (id) => {
+    axios
+      .delete(`${HOSTNAME_AND_PORT}${API_ENDPOINTS.DATABASE_EXPENSE}/${id}`)
+      .then(() => getAndSetExpenseData());
+  };
+
   useEffect(() => {
     getAndSetExpenseData();
     const interval = setInterval(() => getAndSetExpenseData(), 60 * 1000);
@@ -23,11 +29,15 @@ const ExpenseDisplayCard = () => {
   return (
     <Card id='expenseDisplayCard'>
       <h1>Expense</h1>
-      {allExpense.list.map((singleExpense) => (
-        <div key={singleExpense.id}>
-          [{singleExpense.id}] ${singleExpense.amount}: {singleExpense.comment}
-        </div>
-      ))}
+      {
+        allExpense.list.map((singleExpense) => (
+          <Button
+            key={singleExpense.id}
+            onClick={() => handleClick(singleExpense.id)}
+            text={`[${singleExpense.datetime}] $${singleExpense.amount}: ${singleExpense.comment}`}
+          />
+        ))
+      }
     </Card>
   );
 };

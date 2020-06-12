@@ -19,7 +19,7 @@ const ExpenseInputDialog = ({ isOpen, onClose }) => {
   };
 
   const handleSubmit = () => {
-    axios.post(`${HOSTNAME_AND_PORT}${API_ENDPOINTS.DATABASE_INCOME}`, {
+    axios.post(`${HOSTNAME_AND_PORT}${API_ENDPOINTS.DATABASE_EXPENSE}`, {
       amount,
       comment,
     });
