@@ -7,18 +7,21 @@ import { DateInput } from '@blueprintjs/datetime';
 import { HOSTNAME_AND_PORT, API_ENDPOINTS } from '../../global/constants';
 
 const IncomeInputDialog = ({ isOpen, onClose }) => {
+  // Amount
   const [amount, setAmount] = useState();
   const handleAmountChange = (valueN) => {
     const result = valueN.toFixed(2);
     setAmount(result);
   };
 
+  // Comments
   const [comment, setComment] = useState();
   const handleCommentChange = (event) => {
     const commentString = event.target.value;
     setComment(commentString.substring(0, 50));
   };
 
+  // Date and time (a.k.a. datetime)
   const [datetime, setDatetime] = useState(new Date());
   const handleDatetimeChange = (date) => setDatetime(date);
 

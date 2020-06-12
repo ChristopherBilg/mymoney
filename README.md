@@ -13,7 +13,7 @@ mymoney - your personal finance dashboard
 
 1. `npm run ci` : clean-install all required node modules
 2. `npm run api` : start up the REST API services
-3. `npm start` : open a hot-reload server located at `localhost:8080`
+3. `npm run start` : open a hot-reload server located at `localhost:8080`
 4. `npm run test` and `npm run lint` : run mocha unit tests and eslint codestyle linting respectively; both of these npm-scripts are pre-commit hooks that will need to pass in order to commit to the repository
 5. `npm run storybook` : open a hot-reload server to view individual storybook stories (UI functional testing)
 
@@ -22,14 +22,16 @@ mymoney - your personal finance dashboard
 - npm: v6.14.5
 - node: v12.16.1
 
-- Main Architecture
-  - React
-  - Express
-  - Node-persist
-
 # Thank you so much and please enjoy!
 
 ### TODO (for developers)
 
-- Add expense date picker like I did with income (this will affect `ExpenseInputDialog.js` & `ExpenseDisplayCard.js`)
 - Add storybooks for all components that don't have one.
+- Merge income and expense dialogs into one component
+- Merge income and expense display cards into one component
+- Implement [json schema validation](https://www.npmjs.com/package/ajv) for database inputs
+- Split database income and expense into two separate routers/files
+- Graph of income vs expenses over time
+- Calendar view of income and expenses sorted via datetime
+- Integrate CI/CD pipeline `(through GitHub?)`
+- **Find more epics/stories to add, look for open source inspiration**
