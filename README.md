@@ -31,6 +31,8 @@ mymoney - your personal finance dashboard
 - Add building of valid JSDoc from source code into readable format `(markdown?)`
 - Merge income and expense dialogs into one component
 - Merge income and expense display cards into one component
+- Redux store for global state management
+- Remove 'timer'-based api calls, and put modular calls into a `requests.js` file, much like `constants.js`
 - Implement [json schema validation](https://www.npmjs.com/package/ajv) for database inputs
 - Split database income and expense into two separate routers/files
 - Graph of income vs expenses over time
